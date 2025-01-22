@@ -2,7 +2,7 @@
 
 ## Lịch sử
 
-Ngôn ngữ lập trình C++ được tạo ra bởi Bjarne Stroustrup và nhóm của ông tại Bell Laboratories. Vào năm 1980, phiên bản đầu tiên của C++ ra đời được gọi là "C with classes". Như tên gọi C++, ngụ ý rằng ngôn ngữ lập trình này bắt nguồn từ C và ++ biểu thị sự cải tiến và phát triển hơn so với ngôn ngữ C ban đầu.
+Ngôn ngữ lập trình C++ được phát triển bởi Bjarne Stroustrup và nhóm của ông tại Bell Laboratories. Vào năm 1980, phiên bản đầu tiên của C++ ra đời được gọi là "C with classes". Như tên gọi C++, ngụ ý rằng ngôn ngữ lập trình này bắt nguồn từ C và ++ biểu thị sự cải tiến và phát triển hơn so với ngôn ngữ C ban đầu.
 
 ## Đặc điểm của C++
 
@@ -17,7 +17,55 @@ Những bài sau thì mình sẽ nói chi tiết hơn về 4 đặc tính này.
 
 ## Đối tượng
 
-Lập trình hướng đối tượng (OOP) chuyển trọng tâm chú ý sang các đối tượng. Ví dụ, một chương trình quản lý tài khoản ngân hàng sẽ làm việc với các dữ liệu như số dư, hạn mức tín dụng, giao dịch chuyển tiền, tính toán lãi suất, v.v. Một đối tượng đại diện cho tài khoản trong chương trình sẽ có các thuộc tính và chức năng quan trọng để quản lý tài khoản.
+Lập trình hướng đối tượng (OOP) chuyển trọng tâm chú ý sang các đối tượng. Ví dụ, một chương trình quản lý tài khoản ngân hàng sẽ làm việc với các dữ liệu và hành vi như số dư, rút tiền, gửi tiền, kiểm tra số dư. Một đối tượng đại diện cho tài khoản trong chương trình sẽ có các thuộc tính và chức năng quan trọng để quản lý tài khoản.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+// Định nghĩa lớp (Class)
+class BankAccount {
+private:
+    double balance; // Thuộc tính: Số dư
+
+public:
+    // Constructor: Khởi tạo đối tượng
+    BankAccount(double initialBalance) {
+        balance = initialBalance;
+    }
+
+    // Phương thức: Gửi tiền
+    void deposit(double amount) {
+        balance += amount;
+    }
+
+    // Phương thức: Rút tiền
+    void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+        } else {
+            cout << "Insufficient funds!" << endl;
+        }
+    }
+
+    // Phương thức: Kiểm tra số dư
+    double getBalance() {
+        return balance;
+    }
+};
+
+int main() {
+    // Tạo đối tượng từ lớp
+    BankAccount account(1000); // Tài khoản với số dư ban đầu là 1000
+
+    // Sử dụng các phương thức của đối tượng
+    account.deposit(500);    // Nạp thêm 500
+    account.withdraw(300);   // Rút 300
+    cout << "Balance: " << account.getBalance() << endl; // In số dư
+
+    return 0;
+}
+```
 
 Trong OOP, một đối tượng sẽ có dữ liệu hay thuộc tính (properties) và chức năng (capacities). Một lớp (class) định nghĩa kiểu đối tượng cụ thể bằng cách xác định cả properties và capacities của các đối tượng thuộc kiểu đó.
 
