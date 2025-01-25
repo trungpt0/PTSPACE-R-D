@@ -19,6 +19,7 @@ _Superuser_(root) có quyền truy cập toàn bộ tài nguyên hệ thống, v
 
 ## 2.4 Single Directory Hierarchy, Directories, Links, and Files
 Hệ điều hành UNIX/Linux sử dụng cấu trúc thư mục phân cấp duy nhất, bắt đầu từ thư mục gốc(root) `/`.
+
 ![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEihAiKjvpZWCGO48NlU59J0-z6AkFGensRGZxw3fTVm9xyr8jzv0KPKNvOa-IywbgE0J19VSkbaRYT5qAFl-3QboamnSmsUUwbcl5bTal1o0n16gsTT4uFGhIyHGR9fNQzFtDNBrBlpgdM/s400/figure+2-1.PNG)
 
 liên kết trong UNIX/LINUX được chia làm 2 loại: 
